@@ -2,9 +2,12 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
-module.exports = {
+
+module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:3003/",
+    publicPath: argv.mode === 'development' 
+    ? "http://localhost:3001/" 
+    : "https://app2-silk.vercel.app/",
   },
 
   resolve: {
@@ -67,4 +70,4 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
-};
+});
