@@ -47,9 +47,9 @@ module.exports = (_, argv) => ({
       name: "app2",
       filename: "remoteEntry.js",
       remotes: {
-        navbar: "component_library@http://localhost:3001/remoteEntry.js",
-        footer: "component_library@http://localhost:3001/remoteEntry.js",
-        sidebar: "component_library@http://localhost:3001/remoteEntry.js",
+        navbar: "component_library@https://component-library-eta.vercel.app/remoteEntry.js",
+        footer: "component_library@https://component-library-eta.vercel.app/remoteEntry.js",
+        sidebar: "component_library@https://component-library-eta.vercel.app/remoteEntry.js",
       },
       exposes: {
         "./App2" : "./src/index.js"
